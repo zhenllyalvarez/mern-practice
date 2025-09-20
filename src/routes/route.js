@@ -1,13 +1,11 @@
 import express from "express";
+import { getAlldata, createData, updateData, deleteData } from "../controller/crudRoute.js";
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-    res.status(200).send("This is the mern practice routing");
-});
-
-router.post('/', (req, res) => {
-    res.status(201).json({message: "sucessfully created post"});
-});
+router.get("/", getAlldata);
+router.post("/", createData);
+router.post("/:id", updateData);
+router.delete("/:id", deleteData);
 
 export default router;
