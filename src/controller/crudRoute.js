@@ -1,5 +1,12 @@
-export function getAlldata(req, res) {
-    res.status(200).send("This is the mern practice routing");
+import mern from "../models/mern.js";
+
+export async function getAlldata(req, res) {
+    // res.status(200).send("This is the mern practice routing");
+    try {
+        
+    } catch (error) {
+        
+    }
 }
 
 export function createData(req, res) {
