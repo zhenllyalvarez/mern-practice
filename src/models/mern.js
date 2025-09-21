@@ -14,6 +14,6 @@ const mernSchema = new mongoose.Schema({
     }
 }, {timestamps: true});
 
-const mern = mongoose.Model("mern", mernSchema);
+const mern = mongoose.model("mern", mernSchema);
 
 export default mern;

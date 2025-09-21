@@ -5,8 +5,9 @@ import dotenv from "dotenv";
 
 
 dotenv.config();
+
 const app = express();
-const port = process.env.PORT || 5001;
+const port = process.env.PORT || 8001;
 
 app.use('/', route);
 connectDB();

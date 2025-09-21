@@ -3,9 +3,11 @@ import mern from "../models/mern.js";
 export async function getAlldata(req, res) {
     // res.status(200).send("This is the mern practice routing");
     try {
-        
+        const getmern = await mern.find();
+        res.status(200).json(getmern);
     } catch (error) {
-        
+        console.log("Error in getAlldata controller");
+        res.status(500).json({ message: "Internal server error" })
     }
 }
 
