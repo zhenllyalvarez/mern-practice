@@ -15,6 +15,13 @@ export function createData(req, res) {
     // res.status(201).json({ message: "Data added successfully!"});
     try {
         const { title, content } = req.body;
+        const newData = new mern({ title: title, content: content });
+
+        if(newData) {
+
+        } else {
+
+        }
     } catch (error) {
         console.log("Error in creatingData controller");
         res.status(500).json({ message: "Internal server error" });

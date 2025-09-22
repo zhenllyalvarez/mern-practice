@@ -9,6 +9,7 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 8001;
 
+app.use(express.json()); // middleware
 app.use('/', route);
 connectDB();
 
