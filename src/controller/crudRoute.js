@@ -11,17 +11,19 @@ export async function getAlldata(req, res) {
     }
 }
 
-export function createData(req, res) {
+export async function createData(req, res) {
     // res.status(201).json({ message: "Data added successfully!"});
     try {
         const { title, content } = req.body;
         const newData = new mern({ title: title, content: content });
 
-        if(newData) {
+        await newData.save();
+        res.status(201).json({ message: "Data Successfully created!" });
+        // if(newData) {
 
-        } else {
+        // } else {
 
-        }
+        // }
     } catch (error) {
         console.log("Error in creatingData controller");
         res.status(500).json({ message: "Internal server error" });
