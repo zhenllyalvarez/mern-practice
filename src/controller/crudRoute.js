@@ -39,9 +39,13 @@ export async function updateData(req, res) {
         const userID = req.params.id;
         const user = await updateData.findByID(userID);
 
-        
+        if(!user) {
+            
+        } else {
+            res.json({ message: "Failed to update the data!" });
+        }
     } catch (error) {
-        
+        res.json({ message: "Internal error in updateData in controller!" });
     }
 }
 
