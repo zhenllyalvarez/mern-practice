@@ -30,8 +30,19 @@ export async function createData(req, res) {
     }
 }
 
-export function updateData(req, res) {
-    res.status(200).send("Successfully update data!");
+export async function updateData(req, res) {
+    // res.status(200).send("Successfully update data!");
+
+    try {
+        const { title, content } = req.body;
+        const updateData = new mern({ title: title, content: content });
+        const userID = req.params.id;
+        const user = await updateData.findByID(userID);
+
+        
+    } catch (error) {
+        
+    }
 }
 
 export function deleteData(req, res) {
